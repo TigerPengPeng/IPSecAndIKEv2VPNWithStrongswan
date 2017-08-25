@@ -1,6 +1,6 @@
 #!/bin/sh
-apt-get update
-apt-get install build-essential libgmp3-dev libgmp-dev openssl libssl-dev -y
+yum update
+yum install build-essential libgmp3-dev libgmp-dev openssl libssl-dev -y
 
 wget https://download.strongswan.org/strongswan-5.5.2.tar.gz
 tar zxvf strongswan-5.5.2.tar.gz
@@ -106,9 +106,9 @@ EOF
 cat > /etc/ipsec.secrets<<EOF
 : RSA serverKey.pem
 : RSA clientKey.pem
-: PSK "YourPSKHere"
-accountNameHere : EAP "passwdForAccountHere"
-accountNameHere : XAUTH "passwdForAccountHere"
+: PSK "ray"
+accountNameHere : EAP "n0pass.2"
+accountNameHere : XAUTH "tigerPengPeng"
 EOF
 
 #replace 192.241.216.55 with your server IP
